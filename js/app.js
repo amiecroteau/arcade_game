@@ -20,17 +20,36 @@ Enemy.prototype.update = function(dt) {
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+Enemy.prototype.x = function (x){
+    this.x = x;
+}
+Enemy.prototype.y = function (y){
+    this.y = y;
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+let allEnemies = [];
+let enemiesYposition = [
+100,
+150,
+200,
+]
+
+enemiesYposition.forEach(function(y){
+    let enemy = new Enemy();
+    enemy.x = 0;
+    enemy.y = y;
+    allEnemies.push(enemy);
+})
 // Place the player object in a variable called player
 
-
+//Define the player
+//enter the handleInput method to the player
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
