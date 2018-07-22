@@ -27,12 +27,58 @@ Enemy.prototype.y = function (y){
     this.y = y;
 }
 
+
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
+
+ 
+class Hero{
+	constructor(){
+		//this.x=-15;
+		//this.y=450;
+		this.sprite = 'images/char-cat-girl.png';
+		this.step = 101;
+		this.jump = 83;
+		this.startX = this.step * 2;
+		this.startY = (this.jump * 5)-20;
+		this.x = this.startX;
+		this.y = this.startY;
+		
+	}
+	
+	//draw hero on current x and y coordinates
+	render(){
+		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+	}
+	
+	handleInput(input){
+		switch(input){
+			case 'left':
+				this.x -= this.step;
+				break;
+			case 'up':
+				this.y -= this.jump;
+				break;
+			case 'right':
+				this.x += this.step;
+				break;
+			case 'down':
+				this.y += this.jump;
+				break;
+		}
+	}
+
+}
+
+const player = new Hero();	
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+
+
+
 let allEnemies = [];
 let enemiesYposition = [
 100,
