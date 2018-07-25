@@ -24,9 +24,12 @@ var Engine = (function (global) {
 		canvas = doc.createElement('canvas'),
 		ctx = canvas.getContext('2d'),
 		lastTime,
+		//added new id to help stop the canvas loop in if (player.victory) statement
 		id;
+	//selects modal builts in HTML
 	let modal = document.getElementById("end-modal");
 	let modalText = document.getElementById("end-text");
+	//selects buttons for html
 	const newGameBtn = document.getElementById("newGame");
 	const endGameBtn = document.getElementById("closeGame");
 	

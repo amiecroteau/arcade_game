@@ -1,6 +1,57 @@
-frontend-nanodegree-arcade-game
+# Picnic Frogger
 ===============================
+This arcade game is a picnic take on frogger. The little girl wants to go for a swim. But must pass the bugs to get into the water. The user navigates the bugs to get to the last line of rock in front of the water. The object of the game is to reach the water's edge before a bug collides with the little girl. If a bug collides, the user will return to the beginning of the game.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
++  - [Picnic Frogger](#picnic-frogger)
++  - [Table of Contents](#table-of-contents)
++  - [Requirement](#requirement)
++  - [Built With](#built-with)
++  - [Browser Compatibilities](#browser-compatibilities)
++  - [How to Play](#how-to-play)
++  - [Author](#author)
++  - [Acknowledgements](#acknowledgements)
++  - [Image and Icon Sources](#imageicon-sources)
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Requirement
+
+Build a functional game, played by the user in the browser.
+
+## Built With
+
+* HTML 5
+* CSS3
+* JavaScript - including ES6 syntax
+
+## Browser Compatibilities
+
+This game was tested in Microsoft Edge, Firefox, Chrome.
+
+## How to play
+
+Clone or download the repository and open index.html in the browser of your choice. 
+Navigate the hero around the bugs to get to the water's edge. 
+Collide with a bug and be sent automatically back to the start of the game.
+Reach the water's edge and be notified by a banner. 
+Click End Game to end the game or Play Again to try again.
+
+## Author
+Amie Croteau <br>
+
+any questions please contact me at amiecroteau@gmail.com
+
+## Acknowledgements
+
+Lip Permana in slack
+Mentor time walkthrough
+<br></br>
+
+Matthew Crandford
+https://matthewcranford.com/arcade-game-walkthrough-part-4-heros-first-steps/
+https://matthewcranford.com/arcade-game-walkthrough-part-5-adding-enemies/
+https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
+
+## Image and Icon Sources
+
+Images were provided by Udacity for the initial project completion
+<br></br>
