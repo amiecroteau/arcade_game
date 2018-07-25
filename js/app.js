@@ -1,39 +1,34 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+var Enemy = function(x,y) {
+  	this.x = x;
+	this.y = y + 55;
     this.sprite = 'images/enemy-bug.png';
+	this.step=101;
+	this.boundary = this.step*5;
+	this.resetPos = -this.step;
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+   if(this.x <this.boundary){
+	  this.x += 400 * dt; 
+	  
+   } else{
+	   this.x = this.resetPos;
+   }
 };
 
-// Draw the enemy on the screen, required method for game
+
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-Enemy.prototype.x = function (x){
+/*Enemy.prototype.x = function (x){
     this.x = x;
 }
 Enemy.prototype.y = function (y){
     this.y = y;
 }
-
-
-
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-
+*/
  
 class Hero{
 	constructor(){
@@ -57,16 +52,24 @@ class Hero{
 	handleInput(input){
 		switch(input){
 			case 'left':
-				this.x -= this.step;
+				if (this.x >0){
+					this.x -= this.step;
+				}
 				break;
 			case 'up':
-				this.y -= this.jump;
+				if(this.y>0){
+					this.y -= this.jump;
+				}
 				break;
 			case 'right':
-				this.x += this.step;
+				if (this.x < this.step*4){
+					this.x += this.step;
+				}
 				break;
 			case 'down':
-				this.y += this.jump;
+				if(this.y <this.jump*4){
+					this.y += this.jump;
+				}
 				break;
 		}
 	}
@@ -87,15 +90,16 @@ let enemiesYposition = [
 ]
 
 enemiesYposition.forEach(function(y){
-    let enemy = new Enemy();
-    enemy.x = 0;
-    enemy.y = y;
-    allEnemies.push(enemy);
-})
-// Place the player object in a variable called player
+	
+	
+    const bug1 = new Enemy(-101,0, 900);
+	const bug2 = new Enemy((-101*4.5),83, 300);
+	const bug3 = new Enemy ((-101*2.5), 166, 200);
+    
+    allEnemies.push(bug1, bug2, bug3);
 
-//Define the player
-//enter the handleInput method to the player
+})
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
